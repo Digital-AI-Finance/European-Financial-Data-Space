@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>European Financial Data Space Status</title>
+    <title>European Financial Data Space - Policy White Paper</title>
     <style>
         :root {
             --primary: #003399;
@@ -11,6 +11,9 @@
             --text: #333;
             --bg: #fafafa;
             --sidebar-width: 280px;
+            --accent-green: #28a745;
+            --accent-red: #dc3545;
+            --accent-orange: #fd7e14;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
@@ -45,8 +48,8 @@
             display: block;
             color: rgba(255,255,255,0.8);
             text-decoration: none;
-            padding: 8px 0;
-            font-size: 13px;
+            padding: 6px 0;
+            font-size: 12px;
             border-left: 3px solid transparent;
             padding-left: 10px;
             transition: all 0.2s;
@@ -56,16 +59,31 @@
             border-left-color: var(--secondary);
             background: rgba(255,255,255,0.1);
         }
-        .sidebar nav a.sub { padding-left: 25px; font-size: 12px; }
+        .sidebar nav a.sub { padding-left: 25px; font-size: 11px; }
+        .sidebar .new-badge {
+            background: var(--accent-green);
+            color: white;
+            font-size: 9px;
+            padding: 2px 5px;
+            border-radius: 3px;
+            margin-left: 5px;
+            text-transform: uppercase;
+        }
         /* Main content */
         .main {
             margin-left: var(--sidebar-width);
             padding: 40px 60px;
-            max-width: 900px;
+            max-width: 950px;
         }
         h1 {
             font-size: 2.2em;
             color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.1em;
+            color: #666;
+            font-style: italic;
             margin-bottom: 10px;
         }
         .meta {
@@ -150,6 +168,71 @@
             margin-top: 40px;
             font-size: 0.95em;
         }
+        .policy-box {
+            background: #e8f4e8;
+            border: 2px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .policy-box h4 {
+            color: var(--accent-green);
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid var(--accent-orange);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .warning-box h4 {
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        .timeline {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .timeline-item {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        .timeline-date {
+            min-width: 100px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .timeline-content {
+            flex: 1;
+            padding-left: 20px;
+            border-left: 3px solid var(--secondary);
+        }
+        .recommendations-summary {
+            background: linear-gradient(135deg, #001a4d 0%, #003399 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .recommendations-summary h2 { color: var(--secondary); border: none; margin-top: 0; padding-top: 0; }
+        .recommendations-summary ol { margin-left: 20px; }
+        .recommendations-summary li { margin-bottom: 15px; }
+        .rec-priority {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+        .priority-high { background: var(--accent-red); }
+        .priority-medium { background: var(--accent-orange); }
+        .priority-low { background: var(--accent-green); }
         @media (max-width: 900px) {
             .sidebar { display: none; }
             .main { margin-left: 0; padding: 20px; }
@@ -161,42 +244,87 @@
         <h2>Contents</h2>
         <nav>
             <a href="#executive-summary">Executive Summary</a>
+            <a href="#recommendations-summary">Policy Recommendations</a>
             <a href="#glossary">Glossary</a>
             <a href="#introduction">Introduction</a>
             <a href="#evolution">Evolution & Current Status</a>
+            <a href="#data-quality">Data Quality Gap <span class="new-badge">New</span></a>
+            <a href="#fida-status">FIDA 2025 Status <span class="new-badge">New</span></a>
             <a href="#esma-role">ESMA's Role</a>
+            <a href="#esap-roadmap">ESAP Roadmap 2030</a>
+            <a href="#ai-bias">AI & Bias <span class="new-badge">New</span></a>
+            <a href="#crypto-defi">Crypto/DeFi <span class="new-badge">New</span></a>
             <a href="#challenges">Implementation Challenges</a>
             <a class="sub" href="#standardisation">Standardisation</a>
             <a class="sub" href="#governance">Governance</a>
             <a class="sub" href="#legal-political">Legal & Political</a>
             <a class="sub" href="#security">Security</a>
             <a class="sub" href="#acceptance">Market Acceptance</a>
+            <a href="#sme-access">SME & Fintech Access</a>
             <a href="#future">Future Priorities</a>
             <a href="#msca-perspectives">MSCA Fellows' Perspectives</a>
             <a href="#country-table">Country Authorities</a>
             <a href="#references">References</a>
-            <a href="#appendix">Appendix: ESAP Developments</a>
+            <a href="#appendix">Appendix: ESAP Timeline</a>
         </nav>
     </aside>
 
     <main class="main">
-        <h1>European Financial Data Space Status</h1>
+        <h1>European Financial Data Space</h1>
+        <p class="subtitle">Policy White Paper for EU Policymakers</p>
         <div class="meta">
             <strong>Coordinator:</strong> Codruta Mare<br>
             <strong>Authors:</strong> Siang-Li Jheng, Fulvio Raddi, Karolina Weyna<br>
-            <strong>Date:</strong> December 2025
+            <strong>Date:</strong> December 2025<br>
+            <strong>Target Audience:</strong> European Commission, ESMA, EBA, EIOPA, National Regulators
         </div>
 
         <section id="executive-summary" class="exec-summary">
             <h2>Executive Summary</h2>
-            <p>The European Financial Data Space (EFDS) represents the EU's strategy to digitize and standardize financial data across member states. Key developments include:</p>
+            <p>The European Financial Data Space (EFDS) represents the EU's strategy to digitize and standardize financial data across member states. This white paper identifies critical policy gaps and provides actionable recommendations for policymakers.</p>
+
+            <h3 style="color: var(--secondary); margin-top: 20px;">Key Developments</h3>
             <ul>
-                <li><strong>ESAP</strong> (European Single Access Point) - Centralized portal for financial and sustainability data, operational by July 2027</li>
-                <li><strong>ESEF</strong> (European Single Electronic Format) - Mandatory iXBRL reporting since 2020, with ongoing taxonomy updates</li>
-                <li><strong>FIDA</strong> (Financial Data Access) - Proposed open finance framework currently in co-legislative negotiation</li>
-                <li><strong>Sustainability Integration</strong> - Extension of ESEF principles to ESRS/CSRD sustainability reporting</li>
+                <li><strong>ESAP</strong> - Centralized portal operational by July 2027, full functionality by 2030</li>
+                <li><strong>FIDA</strong> - First trilogue April 2025; agreement expected late 2025/early 2026</li>
+                <li><strong>Data Quality</strong> - Critical policy gap: current framework neglects data quality standards for AI applications</li>
+                <li><strong>Big Tech Debate</strong> - May 2025 Commission amendments propose excluding Big Tech from FIDA scope</li>
             </ul>
-            <p>While significant progress has been made, challenges remain in standardisation, governance, cybersecurity, and market adoption across 27 member states.</p>
+
+            <h3 style="color: var(--secondary); margin-top: 20px;">Top Policy Priorities</h3>
+            <ol>
+                <li>Develop comprehensive data quality framework for AI/ML applications</li>
+                <li>Balance FIDA scope to address industry concerns while maintaining innovation goals</li>
+                <li>Accelerate ESAP prototype testing and collection body onboarding</li>
+                <li>Integrate AI governance with EFDS implementation</li>
+                <li>Prepare early framework for crypto-asset data integration</li>
+            </ol>
+        </section>
+
+        <section id="recommendations-summary" class="recommendations-summary">
+            <h2>Policy Recommendations Summary</h2>
+            <ol>
+                <li><strong>Establish Data Quality Standards</strong> <span class="rec-priority priority-high">High Priority</span><br>
+                Develop a mandatory data quality framework addressing conceptual and organizational dimensions for AI applications. Current EFDS policy neglects whether shared data is fit for AI development.</li>
+
+                <li><strong>Complete FIDA Negotiations with Balanced Scope</strong> <span class="rec-priority priority-high">High Priority</span><br>
+                Finalize FIDA by Q1 2026 with clear scope definitions. Address industry concerns through phased implementation (2027-2031) and proportionate SME requirements.</li>
+
+                <li><strong>Accelerate ESAP Collection Body Onboarding</strong> <span class="rec-priority priority-high">High Priority</span><br>
+                Prioritize the 6-month prototype phase and ensure all 27 Member States have designated and trained collection bodies by mid-2026.</li>
+
+                <li><strong>Integrate AI Governance Framework</strong> <span class="rec-priority priority-medium">Medium Priority</span><br>
+                Align EFDS with AI Act requirements. Develop guidelines for responsible AI development using EFDS data, addressing bias risks.</li>
+
+                <li><strong>Develop Crypto-Asset Data Framework</strong> <span class="rec-priority priority-medium">Medium Priority</span><br>
+                Begin preparatory work for crypto-asset data integration ahead of FIDA Stage 2 (36 months post-adoption).</li>
+
+                <li><strong>Create SME Support Mechanisms</strong> <span class="rec-priority priority-medium">Medium Priority</span><br>
+                Establish technical assistance programs, simplified reporting pathways, and public-private partnerships to prevent SME exclusion.</li>
+
+                <li><strong>Standardize Machine-Readable Formats</strong> <span class="rec-priority priority-low">Ongoing</span><br>
+                Complete format selection (XML/JSON/XBRL) through evidence-based assessment. Provide clear migration pathways for existing systems.</li>
+            </ol>
         </section>
 
         <section id="glossary" class="glossary">
@@ -205,7 +333,7 @@
                 <dt>EFDS</dt><dd>European Financial Data Space</dd>
                 <dt>ESAP</dt><dd>European Single Access Point</dd>
                 <dt>ESEF</dt><dd>European Single Electronic Format</dd>
-                <dt>FIDA</dt><dd>Financial Data Access (proposal)</dd>
+                <dt>FIDA</dt><dd>Financial Data Access (regulation proposal)</dd>
                 <dt>ESRS</dt><dd>European Sustainability Reporting Standards</dd>
                 <dt>CSRD</dt><dd>Corporate Sustainability Reporting Directive</dd>
                 <dt>iXBRL</dt><dd>Inline eXtensible Business Reporting Language</dd>
@@ -216,6 +344,8 @@
                 <dt>CMU</dt><dd>Capital Markets Union</dd>
                 <dt>API</dt><dd>Application Programming Interface</dd>
                 <dt>ESG</dt><dd>Environmental, Social, and Governance</dd>
+                <dt>DeFi</dt><dd>Decentralized Finance</dd>
+                <dt>SDMX</dt><dd>Statistical Data and Metadata eXchange</dd>
             </dl>
         </section>
 
@@ -231,10 +361,101 @@
             <p>Finance was selected early as a priority sector because financial data are central to supervision, capital allocation, consumer services and innovation, and because existing rules (for example on payments) had shown both the benefits and the limits of piecemeal data opening. The Commission established an Expert Group to advise on a Financial Data Space. That Expert Group reported in October 2022 with a practical definition of "open finance" use cases and technical needs, and the Commission used that report as a foundation for a legislative initiative to create a regulated framework for financial data access.</p>
             <p>Early developments focused on addressing the fragmentation of financial data sources and the lack of harmonized formats, which historically made cross-border financial analysis within Europe complex and costly. To address these challenges, institutions such as ESMA, EBA, and EIOPA started working closely to promote data standardization. A significant milestone came with the introduction of the <strong>European Single Electronic Format (ESEF)</strong> in 2019, which mandated that all issuers on EU regulated markets prepare their annual financial reports in a structured electronic format based on Inline XBRL (iXBRL) standards starting from financial year beginning January 1, 2020.</p>
             <p>Since then, efforts have accelerated. The EFDS vision has been progressively integrated into the EU's broader initiatives like the Capital Markets Union (CMU) and the Digital Finance Strategy. A major complementary development is the creation of the <strong>ESAP</strong>, a platform set to go live in phases starting by 10 July 2027, which will act as a centralized hub for accessing publicly available financial reporting data and sustainability-related information on EU companies.</p>
-            <p>Market reactions have been positive. <a href="https://www.capco.com/intelligence/capco-intelligence/european-single-access-point">Capco</a> highlights the impact of ESAP on financial and ESG data, stressing its potential to streamline crucial decision-making processes. <a href="https://www.matheson.com/insights/detail/european-single-access-point--regulation---an-update">Matheson</a> discusses the legal aspects and expected timelines for implementing the ESAP regulation. <a href="https://www.xbrl.org/tag/esap/">XBRL International</a> explores how the integration of structured data will enhance data accessibility. <a href="https://www.securities-services.societegenerale.com/en/insights/views/news/esap-european-single-access-point/">Societe Generale</a> outlines ESAP's role in providing EU-wide access to financial and non-financial information. <a href="https://www.herbertsmithfreehills.com/notes/esg/2024-posts/European-Single-Access-Point--what-it-means-for-sustainability-data">Herbert Smith Freehills</a> emphasizes how ESAP will help standardize and centralize ESG disclosures. <a href="https://securities.cib.bnpparibas/esap-regulation-european-single-access-point/">BNP Paribas</a> details the legislative package and its impact on reporting requirements. <a href="https://accountancyeurope.eu/publications/european-single-access-point-esap-what-do-auditors-need-to-know/">Accountancy Europe</a> highlights the importance of transparency for auditors.</p>
             <p>The most concrete early legal achievement for the EFDS is the adoption of the ESAP Regulation. The European Parliament and the Council adopted Regulation (EU) 2023/2859, which formally tasks ESMA with creating and operating a European Single Access Point providing centralised access to publicly available information relevant to financial services, capital markets and sustainability.</p>
-            <p>As of late 2025 the two strands that make up the EFDS, ESAP and FIDA, are at different stages. ESAP has a binding legal basis in the ESAP Regulation and therefore a firm delivery timetable. The FIDA initiative, by contrast, remains in the inter-institutional legislative phase: the Commission's proposal lays out a framework for customer control over data, obligations for data holders and an authorisation regime for data users, but the final text requires agreement in the co-legislative process.</p>
-            <p>The legal timetable for ESAP is explicit in the ESAP Regulation and therefore provides the clearest short-term horizon for the EFDS: ESMA must build and put into operation the centralised portal according to the dates and the functional and security requisites set out in the Regulation. For the open finance regulation, the Commission's proposal envisages a staged implementation once the co-legislators reach agreement.</p>
+        </section>
+
+        <section id="data-quality">
+            <h2>The Data Quality Gap: A Critical Policy Oversight</h2>
+            <p>A fundamental limitation in the current EFDS policy framework is the neglect of data quality standards. While significant effort has been devoted to data access, interoperability, and format standardization, the question of whether shared data will be fit for purpose - particularly for AI and machine learning applications - remains largely unaddressed.</p>
+
+            <div class="warning-box">
+                <h4>Critical Gap Identified</h4>
+                <p>Research published in the <a href="https://academic.oup.com/ijlit/article/32/1/eaae015/7742982">International Journal of Law and Information Technology</a> (2024) identifies that the current EFDS policy framework "suffers from a major limitation - it neglects data quality and whether shared data will be fit for AI application development."</p>
+            </div>
+
+            <h3>Why Data Quality Matters</h3>
+            <p>Artificial intelligence is the most notable innovation that could benefit from enhanced access to data through the EFDS. AI-driven tools play a vital role in harnessing data potential for risk assessment, fraud detection, customer service automation, and investment analysis. However, training these systems on low-quality data carries inherent risks:</p>
+            <ul>
+                <li><strong>Bias perpetuation:</strong> Historical biases in financial data can be amplified by AI systems</li>
+                <li><strong>Model degradation:</strong> Inconsistent data formats and missing values reduce model accuracy</li>
+                <li><strong>Regulatory non-compliance:</strong> Poor data quality may lead to AI decisions that violate consumer protection rules</li>
+                <li><strong>Reputational damage:</strong> Errors in AI-driven financial services undermine consumer trust</li>
+            </ul>
+
+            <h3>Current Regulatory Gaps</h3>
+            <p>While the AI Act and GDPR could play roles in fostering data quality, they may not be sufficient for the specific requirements of financial data sharing:</p>
+            <ul>
+                <li>The AI Act focuses on AI system design rather than input data quality</li>
+                <li>GDPR addresses personal data accuracy but not the fitness of data for AI applications</li>
+                <li>ESEF/ESAP standards focus on format and accessibility, not semantic quality</li>
+            </ul>
+
+            <div class="policy-box">
+                <h4>Policy Recommendation</h4>
+                <p>Policymakers should develop a comprehensive data quality framework encompassing both conceptual dimensions (accuracy, completeness, consistency, timeliness) and organizational dimensions (governance, documentation, audit trails). This framework should be integrated into ESAP collection body requirements and FIDA data holder obligations.</p>
+            </div>
+        </section>
+
+        <section id="fida-status">
+            <h2>FIDA: 2025 Legislative Status and Industry Concerns</h2>
+            <p>The Financial Data Access (FIDA) regulation is officially in motion. Building on the success of PSD2, which introduced open banking in Europe, FIDA expands the principles of data sharing to a broader range of financial products and services including pensions, investments, mortgages, insurance, and beyond.</p>
+
+            <h3>Current Legislative Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">June 2023</span>
+                    <div class="timeline-content">Commission publishes FIDA legislative proposal</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">April 2025</span>
+                    <div class="timeline-content">First trilogue between Parliament, Council, and Commission</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">May 2025</span>
+                    <div class="timeline-content">Commission non-paper proposes Big Tech exclusion and scope simplification</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">July 2025</span>
+                    <div class="timeline-content">Denmark assumes EU Council presidency; push to finalize FIDA</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Late 2025/Q1 2026</span>
+                    <div class="timeline-content">Expected agreement (originally autumn 2025, now likely delayed)</div>
+                </div>
+            </div>
+
+            <h3>Key Debates and Amendments</h3>
+            <p>On 16 May 2025, the EU Commission disclosed a non-paper outlining several steps for simplification of the FIDA proposal. The most significant proposed changes include:</p>
+            <ul>
+                <li><strong>Big Tech Exclusion:</strong> The Commission is amending FIDA to exclude Big Tech companies and large corporations while focusing on individuals and SMEs</li>
+                <li><strong>Scope Refinement:</strong> Debates continue over which financial products and data categories should be in scope</li>
+                <li><strong>Local Flexibility:</strong> Member States seeking discretion in implementation details</li>
+            </ul>
+
+            <h3>Industry Resistance</h3>
+            <div class="warning-box">
+                <h4>Industry Joint Statement (December 2024)</h4>
+                <p>On 9 December 2024, major financial industry associations issued a joint statement calling to "avoid concluding the Financial Data Access (FiDA) Regulation before a thorough assessment of its impact across the entire value chain is completed." Traditional financial institutions cite high compliance costs and risks of sharing European citizens' data with tech giants.</p>
+            </div>
+
+            <h3>Implementation Phases (If Adopted)</h3>
+            <table>
+                <thead>
+                    <tr><th>Stage</th><th>Timeline</th><th>Scope</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Stage 1</td><td>24 months post-adoption</td><td>Consumer credit, savings accounts, motor insurance</td></tr>
+                    <tr><td>Stage 2</td><td>36 months post-adoption</td><td>Mortgage loans, investments, crypto-assets, personal pensions</td></tr>
+                    <tr><td>Stage 3</td><td>48 months post-adoption</td><td>Credit ratings, non-life insurance</td></tr>
+                </tbody>
+            </table>
+
+            <div class="policy-box">
+                <h4>Policy Recommendation</h4>
+                <p>Complete FIDA negotiations by Q1 2026 with a balanced approach: (1) Address legitimate industry concerns through proportionate requirements for different entity sizes; (2) Maintain the core open finance objectives; (3) Provide clear transitional periods for each stage; (4) Establish robust compensation mechanisms for data holders.</p>
+            </div>
+
+            <p><strong>Sources:</strong> <a href="https://www.capco.com/intelligence/capco-intelligence/financial-data-access-regulation-april-2025-update">Capco April 2025 Update</a>, <a href="https://blog.axway.com/industry-insights/banking-finance/fida-amendments-update">Axway FIDA Amendments</a>, <a href="https://www.taylorwessing.com/en/insights-and-events/insights/2025/07/fida-update-eu-journey-to-open-finance">Taylor Wessing FIDA Update</a></p>
         </section>
 
         <section id="esma-role">
@@ -254,6 +475,121 @@
                 "Building an integrated financial system is not only about the plumbing of markets, but about making that system work for citizens and companies."
                 <cite>-- Verena Ross, ESMA Chair (2025)</cite>
             </blockquote>
+        </section>
+
+        <section id="esap-roadmap">
+            <h2>ESAP Implementation Roadmap to 2030</h2>
+            <p>The European Single Access Point will be implemented in phases, with full functionality not expected until 2030. This extended timeline reflects the complexity of coordinating 27 Member States, multiple collection bodies, and diverse data formats.</p>
+
+            <h3>Implementation Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">Dec 2024</span>
+                    <div class="timeline-content">Original ESAP establishment deadline (missed)</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Oct 2024</span>
+                    <div class="timeline-content">ESAs publish final ITS for collection bodies and ESAP functionalities</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Dec 2025</span>
+                    <div class="timeline-content">ESMA to provide minimum portal functionalities (user-friendly web interface)</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Jan 2026</span>
+                    <div class="timeline-content">ESAP begins collecting information; prototype phase (6 months minimum)</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">July 2026</span>
+                    <div class="timeline-content">Collection bodies fully operational</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">July 2027</span>
+                    <div class="timeline-content">ESAP publication begins; public access to information</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2027-2030</span>
+                    <div class="timeline-content">Phased inclusion of regulations and directives into ESAP scope</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2030</span>
+                    <div class="timeline-content">Full ESAP functionality achieved</div>
+                </div>
+            </div>
+
+            <h3>Key Implementation Challenges</h3>
+            <ul>
+                <li><strong>Format Selection:</strong> No single format suitable for all disclosure types; ongoing assessment of XML, JSON, XBRL trade-offs</li>
+                <li><strong>Collection Body Coordination:</strong> Varying technical maturity across 27 Member States</li>
+                <li><strong>IT Infrastructure:</strong> 6-month prototype phase required to test systems</li>
+                <li><strong>Metadata Standards:</strong> LEI validation, categorization requirements still being finalized</li>
+            </ul>
+
+            <div class="policy-box">
+                <h4>Policy Recommendation</h4>
+                <p>Prioritize collection body onboarding and the 6-month prototype phase. Ensure all Member States have designated, trained, and technically equipped collection bodies by mid-2026. Consider establishing an EU-level support mechanism for Member States with limited technical capacity.</p>
+            </div>
+
+            <p><strong>Sources:</strong> <a href="https://www.pwc.ch/en/insights/regulation/update-on-the-esap.html">PwC ESAP Update</a>, <a href="https://www.greenomy.io/blog/european-single-access-point">Greenomy ESAP Analysis</a>, <a href="https://www.amf-france.org/en/news-publications/news/european-single-access-point-financial-and-non-financial-information-european-entities-esap-enters">AMF France</a></p>
+        </section>
+
+        <section id="ai-bias">
+            <h2>AI Bias and Responsible Development in Financial Data</h2>
+            <p>A critical question for EFDS policymakers is whether the data space can enable responsible AI development in finance, or whether it risks perpetuating existing biases. Research published in the <a href="https://academic.oup.com/ijlit/article/31/3/253/7285695">International Journal of Law and Information Technology</a> examines whether EFDS facilitates responsible AI development considering data protection concerns.</p>
+
+            <h3>The Bias Challenge</h3>
+            <p>AI-driven tools in finance - from credit scoring to fraud detection to robo-advisors - rely on historical data that may embed systemic biases:</p>
+            <ul>
+                <li><strong>Lending discrimination:</strong> Historical loan data may reflect past discriminatory practices</li>
+                <li><strong>Geographic bias:</strong> Data availability varies across Member States and regions</li>
+                <li><strong>SME underrepresentation:</strong> Large company data dominates many financial datasets</li>
+                <li><strong>Sustainability gaps:</strong> ESG data quality varies significantly by sector and company size</li>
+            </ul>
+
+            <h3>Regulatory Interactions</h3>
+            <p>The EFDS must align with multiple regulatory frameworks affecting AI development:</p>
+            <table>
+                <thead>
+                    <tr><th>Regulation</th><th>Relevance to EFDS/AI</th><th>Gap</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>AI Act</td><td>High-risk AI system requirements</td><td>Focuses on system design, not input data quality</td></tr>
+                    <tr><td>GDPR</td><td>Personal data accuracy, automated decision-making</td><td>Not designed for financial data fitness assessment</td></tr>
+                    <tr><td>DORA</td><td>ICT risk management for financial entities</td><td>Operational focus, not data quality</td></tr>
+                </tbody>
+            </table>
+
+            <div class="policy-box">
+                <h4>Policy Recommendation</h4>
+                <p>Integrate AI governance requirements into EFDS implementation: (1) Require data providers to document potential biases in datasets; (2) Establish bias testing protocols for AI systems using EFDS data; (3) Create transparency requirements for AI-driven financial decisions; (4) Align EFDS data quality standards with AI Act requirements for high-risk systems.</p>
+            </div>
+        </section>
+
+        <section id="crypto-defi">
+            <h2>Crypto-Assets and DeFi: Preparing for Integration</h2>
+            <p>Currently, crypto-assets and decentralized finance (DeFi) protocols are not part of the EFDS framework. However, FIDA Stage 2 (36 months post-adoption) is expected to include crypto-assets, making early preparation essential.</p>
+
+            <h3>Current Exclusion</h3>
+            <p>The MSCA Digital Fellows' research identifies the exclusion of crypto/DeFi as a significant gap in the EFDS framework. Key challenges include:</p>
+            <ul>
+                <li><strong>Data format heterogeneity:</strong> Blockchain data uses fundamentally different structures than traditional financial data</li>
+                <li><strong>Decentralization:</strong> No central authority to serve as collection body</li>
+                <li><strong>Pseudonymity:</strong> Reconciling blockchain transparency with GDPR requirements</li>
+                <li><strong>Cross-border nature:</strong> Crypto assets operate independently of national jurisdictions</li>
+            </ul>
+
+            <h3>MiCA Alignment</h3>
+            <p>The Markets in Crypto-Assets (MiCA) regulation provides a foundation for crypto-asset data integration. EFDS should leverage MiCA's:</p>
+            <ul>
+                <li>Crypto-asset service provider (CASP) registration requirements</li>
+                <li>White paper disclosure obligations</li>
+                <li>Reserve asset reporting for stablecoins</li>
+            </ul>
+
+            <div class="policy-box">
+                <h4>Policy Recommendation</h4>
+                <p>Begin preparatory work for crypto-asset data integration: (1) Establish a technical working group to assess blockchain data interoperability with ESAP; (2) Develop prototype data schemas for crypto-asset disclosures; (3) Identify potential collection body arrangements for decentralized assets; (4) Coordinate with MiCA implementation to ensure data format alignment.</p>
+            </div>
         </section>
 
         <section id="challenges">
@@ -278,8 +614,34 @@
             <p>Achieving meaningful consumer trust (so that individuals elect to permit data sharing) depends on transparent, usable consent mechanisms and visible safeguards in the legal and technical design. On the market side, financial institutions and Fintechs must also see tangible benefits from adopting the standardised interfaces, APIs, and compliance obligations required by ESAP and FIDA. If the costs of integration, compliance, or cybersecurity are perceived as higher than the potential gains from data sharing or innovation, firms may resist full participation.</p>
         </section>
 
+        <section id="sme-access">
+            <h2>SME and Fintech Access: Preventing Exclusion</h2>
+            <p>A critical concern identified by both industry stakeholders and MSCA Digital Fellows is that the EFDS could inadvertently reinforce the market dominance of large incumbent institutions if smaller players cannot afford to participate.</p>
+
+            <h3>Barrier-to-Entry Risks</h3>
+            <ul>
+                <li><strong>Compliance costs:</strong> Technical infrastructure requirements may exceed SME budgets</li>
+                <li><strong>Technical complexity:</strong> API development and data format compliance require specialized expertise</li>
+                <li><strong>Cybersecurity burdens:</strong> Security requirements impose fixed costs that disproportionately affect smaller entities</li>
+                <li><strong>Resource constraints:</strong> Community banks and regional insurers lack dedicated compliance teams</li>
+            </ul>
+
+            <h3>Fintech Considerations</h3>
+            <p>While FIDA aims to enable Fintech innovation through data access, the regulatory burden may create barriers:</p>
+            <ul>
+                <li>Authorization regime costs for data users</li>
+                <li>Liability and insurance requirements</li>
+                <li>Ongoing reporting and audit obligations</li>
+            </ul>
+
+            <div class="policy-box">
+                <h4>Policy Recommendation</h4>
+                <p>Create targeted SME and Fintech support mechanisms: (1) Establish EU-funded technical assistance programs for EFDS compliance; (2) Develop simplified reporting pathways with proportionate requirements; (3) Create public-private partnerships to provide shared infrastructure; (4) Consider phased compliance timelines based on entity size; (5) Establish regulatory sandboxes for Fintech FIDA applications.</p>
+            </div>
+        </section>
+
         <section id="future">
-            <h2>Future Priorities and Recommendations</h2>
+            <h2>Future Priorities and Strategic Direction</h2>
             <p>To successfully address the current challenges and unlock the full potential of the European Financial Data Space, policymakers, regulators, and industry stakeholders must focus on several strategic priorities:</p>
             <ol>
                 <li><strong>Enhancing interoperability and harmonization</strong> across datasets must remain a top priority. Close coordination between ESMA, EFRAG, national supervisors, and global standard-setters like the IFRS Foundation will be essential to achieve true cross-border data comparability.</li>
@@ -292,7 +654,7 @@
 
         <section id="msca-perspectives">
             <h2>MSCA Digital Fellows' Perspectives</h2>
-            <p>Based on the reports submitted by the Doctoral Candidates of the MSCA Digital, key themes were identified:</p>
+            <p>Based on the reports submitted by the Doctoral Candidates of the MSCA Digital program, key themes were identified that complement the policy analysis above:</p>
 
             <h3>1. Technical Fragmentation and Standardisation Gaps</h3>
             <p>A recurring consideration is the lack of common standards, which hinders interoperability. Financial data is collected in varying formats and lacks consistent re-usable taxonomies. The implementation of a common data model or standardized exchange protocols, such as the Statistical Data and Metadata eXchange (SDMX) standard already promoted by the ECB and BIS, could create a layer of semantic abstraction. However, outdated infrastructure at many financial institutions limits their ability to integrate with modern data-sharing systems.</p>
@@ -355,17 +717,21 @@
                 <li>Expert group on European financial data space (E03763) (15 March 2021). <a href="https://ec.europa.eu/transparency/expert-groups-register/screen/expert-groups/consult?lang=en&groupID=3763">European Commission transparency register</a>.</li>
                 <li>European Union. (13 December 2023). <a href="https://eur-lex.europa.eu/EN/legal-content/summary/european-single-access-point.html">European single access point</a>.</li>
                 <li>European Financial Data Space. (19 February 2020). <a href="https://www.european-financial-data-space.com/">European Financial Data Space</a>.</li>
-                <li>European Union. (2020). <a href="https://eur-lex.europa.eu/eli/reg/2020/852/oj">Regulation (EU) 2020/852</a> on the establishment of a framework to facilitate sustainable investment. Official Journal of the European Union, L 198, 13-43.</li>
+                <li>European Union. (2020). <a href="https://eur-lex.europa.eu/eli/reg/2020/852/oj">Regulation (EU) 2020/852</a> on the establishment of a framework to facilitate sustainable investment.</li>
                 <li>ESMA. <a href="https://www.esma.europa.eu/press-news/esma-news/esas-finalise-rules-facilitate-access-financial-and-sustainability-information">The ESAs finalise rules to facilitate access to financial and sustainability information on the ESAP</a>.</li>
                 <li>Ross, V. (29 October 2024). <a href="https://www.esma.europa.eu/document/verena-ross-keynote-speech-11th-international-financial-markets-conference-7-november-2025">Keynote speech at the 11th International Financial Markets Conference</a>. ESMA.</li>
+                <li>International Journal of Law and Information Technology (2024). <a href="https://academic.oup.com/ijlit/article/32/1/eaae015/7742982">The data quality problem in the European Financial Data Space</a>.</li>
+                <li>International Journal of Law and Information Technology (2023). <a href="https://academic.oup.com/ijlit/article/31/3/253/7285695">Can the European Financial Data Space remove bias in financial AI development?</a></li>
+                <li>Capco (April 2025). <a href="https://www.capco.com/intelligence/capco-intelligence/financial-data-access-regulation-april-2025-update">Financial Data Access Regulation (FIDA): April 2025 Update</a>.</li>
+                <li>Taylor Wessing (July 2025). <a href="https://www.taylorwessing.com/en/insights-and-events/insights/2025/07/fida-update-eu-journey-to-open-finance">FIDA Update: The EU's journey to Open Finance</a>.</li>
+                <li>PwC. <a href="https://www.pwc.ch/en/insights/regulation/update-on-the-esap.html">Update on the European Single Access Point (ESAP)</a>.</li>
             </ul>
         </section>
 
         <section id="appendix">
-            <h2>Appendix: European Single Access Point (ESAP) - Recent Developments</h2>
-            <p>Initially, ESMA was tasked with establishing ESAP by December 2024. However, due to the complexity of the project and the need for comprehensive technical and operational frameworks, the timeline has been extended. ESMA is now required to ensure the ESAP portal provides a minimum set of functionalities, such as a user-friendly web portal, by December 2025. The full operationalization of ESAP is now anticipated by July 2027 (<a href="https://www.pwc.ch/en/insights/regulation/update-on-the-esap.html">PwC</a>, <a href="https://www.european-financial-data-space.com/European_Single_Access_Point_(ESAP).html">EFDS</a>).</p>
-            <p>In October 2024, the European Supervisory Authorities (ESAs) finalized implementing technical standards (ITS) to facilitate access to financial and sustainability information on ESAP. These standards specify tasks for collection bodies, such as national authorities and EU offices, detailing how and when information should be submitted to ESAP, the validation checks required, and the metadata to be included (<a href="https://www.greenomy.io/blog/european-single-access-point">Greenomy</a>).</p>
-            <p>The ESAP platform is expected to be operational by 1 January 2026, subject to the adoption of delegated and implementing acts by the European Commission and ESMA (<a href="https://www.pwc.ch/en/insights/regulation/update-on-the-esap.html">PwC</a>).</p>
+            <h2>Appendix: ESAP Implementation Timeline</h2>
+            <p>Initially, ESMA was tasked with establishing ESAP by December 2024. However, due to the complexity of the project and the need for comprehensive technical and operational frameworks, the timeline has been extended. ESMA is now required to ensure the ESAP portal provides a minimum set of functionalities, such as a user-friendly web portal, by December 2025. The full operationalization of ESAP is now anticipated by July 2027, with complete functionality by 2030.</p>
+            <p>In October 2024, the European Supervisory Authorities (ESAs) finalized implementing technical standards (ITS) to facilitate access to financial and sustainability information on ESAP. These standards specify tasks for collection bodies, such as national authorities and EU offices, detailing how and when information should be submitted to ESAP, the validation checks required, and the metadata to be included.</p>
 
             <figure class="figure">
                 <img src="assets/esap-milestones.png" alt="ESAP Milestones Timeline">
