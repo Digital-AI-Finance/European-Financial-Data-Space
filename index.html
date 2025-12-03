@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Financial Data Space Status</title>
+    <style>
+        :root {
+            --primary: #003399;
+            --secondary: #ffcc00;
+            --text: #333;
+            --bg: #fafafa;
+            --sidebar-width: 280px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+        }
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 100;
+        }
+        .sidebar h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        .sidebar nav a {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 8px 0;
+            font-size: 13px;
+            border-left: 3px solid transparent;
+            padding-left: 10px;
+            transition: all 0.2s;
+        }
+        .sidebar nav a:hover, .sidebar nav a.active {
+            color: white;
+            border-left-color: var(--secondary);
+            background: rgba(255,255,255,0.1);
+        }
+        .sidebar nav a.sub { padding-left: 25px; font-size: 12px; }
+        /* Main content */
+        .main {
+            margin-left: var(--sidebar-width);
+            padding: 40px 60px;
+            max-width: 900px;
+        }
+        h1 {
+            font-size: 2.2em;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: var(--primary);
+            margin: 40px 0 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #444;
+            margin: 30px 0 15px;
+        }
+        p { margin-bottom: 15px; text-align: justify; }
+        ul, ol { margin: 15px 0 15px 30px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--primary); }
+        blockquote {
+            margin: 20px 0;
+            padding: 15px 20px;
+            border-left: 4px solid var(--secondary);
+            background: #f5f5f5;
+            font-style: italic;
+        }
+        blockquote cite { display: block; margin-top: 10px; font-style: normal; font-size: 0.9em; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th { background: var(--primary); color: white; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .figure {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .figure img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+        }
+        .figure figcaption {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .exec-summary {
+            background: linear-gradient(135deg, #003399 0%, #001a4d 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .exec-summary h2 { color: var(--secondary); border: none; margin-top: 0; padding-top: 0; }
+        .exec-summary ul { margin-left: 20px; }
+        .exec-summary li { margin-bottom: 10px; }
+        .glossary {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .glossary dt { font-weight: bold; color: var(--primary); margin-top: 10px; }
+        .glossary dd { margin-left: 20px; margin-bottom: 5px; }
+        .acknowledgments {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            font-size: 0.95em;
+        }
+        @media (max-width: 900px) {
+            .sidebar { display: none; }
+            .main { margin-left: 0; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>Contents</h2>
+        <nav>
+            <a href="#executive-summary">Executive Summary</a>
+            <a href="#glossary">Glossary</a>
+            <a href="#introduction">Introduction</a>
+            <a href="#evolution">Evolution & Current Status</a>
+            <a href="#esma-role">ESMA's Role</a>
+            <a href="#challenges">Implementation Challenges</a>
+            <a class="sub" href="#standardisation">Standardisation</a>
+            <a class="sub" href="#governance">Governance</a>
+            <a class="sub" href="#legal-political">Legal & Political</a>
+            <a class="sub" href="#security">Security</a>
+            <a class="sub" href="#acceptance">Market Acceptance</a>
+            <a href="#future">Future Priorities</a>
+            <a href="#msca-perspectives">MSCA Fellows' Perspectives</a>
+            <a href="#country-table">Country Authorities</a>
+            <a href="#references">References</a>
+            <a href="#appendix">Appendix: ESAP Developments</a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <h1>European Financial Data Space Status</h1>
+        <div class="meta">
+            <strong>Coordinator:</strong> Codruta Mare<br>
+            <strong>Authors:</strong> Siang-Li Jheng, Fulvio Raddi, Karolina Weyna<br>
+            <strong>Date:</strong> December 2025
+        </div>
+
+        <section id="executive-summary" class="exec-summary">
+            <h2>Executive Summary</h2>
+            <p>The European Financial Data Space (EFDS) represents the EU's strategy to digitize and standardize financial data across member states. Key developments include:</p>
+            <ul>
+                <li><strong>ESAP</strong> (European Single Access Point) - Centralized portal for financial and sustainability data, operational by July 2027</li>
+                <li><strong>ESEF</strong> (European Single Electronic Format) - Mandatory iXBRL reporting since 2020, with ongoing taxonomy updates</li>
+                <li><strong>FIDA</strong> (Financial Data Access) - Proposed open finance framework currently in co-legislative negotiation</li>
+                <li><strong>Sustainability Integration</strong> - Extension of ESEF principles to ESRS/CSRD sustainability reporting</li>
+            </ul>
+            <p>While significant progress has been made, challenges remain in standardisation, governance, cybersecurity, and market adoption across 27 member states.</p>
+        </section>
+
+        <section id="glossary" class="glossary">
+            <h3>Glossary of Acronyms</h3>
+            <dl>
+                <dt>EFDS</dt><dd>European Financial Data Space</dd>
+                <dt>ESAP</dt><dd>European Single Access Point</dd>
+                <dt>ESEF</dt><dd>European Single Electronic Format</dd>
+                <dt>FIDA</dt><dd>Financial Data Access (proposal)</dd>
+                <dt>ESRS</dt><dd>European Sustainability Reporting Standards</dd>
+                <dt>CSRD</dt><dd>Corporate Sustainability Reporting Directive</dd>
+                <dt>iXBRL</dt><dd>Inline eXtensible Business Reporting Language</dd>
+                <dt>ESMA</dt><dd>European Securities and Markets Authority</dd>
+                <dt>EBA</dt><dd>European Banking Authority</dd>
+                <dt>EIOPA</dt><dd>European Insurance and Occupational Pensions Authority</dd>
+                <dt>EFRAG</dt><dd>European Financial Reporting Advisory Group</dd>
+                <dt>CMU</dt><dd>Capital Markets Union</dd>
+                <dt>API</dt><dd>Application Programming Interface</dd>
+                <dt>ESG</dt><dd>Environmental, Social, and Governance</dd>
+            </dl>
+        </section>
+
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>The European Financial Data Space (EFDS) represents a significant element of the European Union's strategy to digitize and standardize financial data across its member states. Initially launched as part of the broader European Strategy for Data in 2020, the EFDS aims to foster innovation, transparency, and efficiency in the financial sector by providing a secure framework for the sharing of financial and sustainability-related information.</p>
+            <p>As part of this vision, the European Securities and Markets Authority (ESMA) has been instrumental in leading efforts like the European Single Electronic Format (ESEF) and the upcoming European Single Access Point (ESAP), which seek to streamline access to essential data for businesses, investors, and regulators. These developments, however, are not without their challenges, including issues of data interoperability, adoption rates, data quality, and cybersecurity. Despite these hurdles, the EFDS continues to evolve, moving from conceptualization toward operationalization.</p>
+        </section>
+
+        <section id="evolution">
+            <h2>The Evolution and Current Status of the European Financial Data Space</h2>
+            <p>The concept of the EFDS originated from the broader European Strategy for Data, launched by the European Commission in February 2020. This initiative aimed to create sector-specific data spaces, including finance, to foster innovation, competitiveness, and transparency across the EU. In the financial sector, the EFDS is envisioned as a comprehensive framework to facilitate secure, standardized, and efficient sharing of financial information among companies, investors, regulators, and the public.</p>
+            <p>Finance was selected early as a priority sector because financial data are central to supervision, capital allocation, consumer services and innovation, and because existing rules (for example on payments) had shown both the benefits and the limits of piecemeal data opening. The Commission established an Expert Group to advise on a Financial Data Space. That Expert Group reported in October 2022 with a practical definition of "open finance" use cases and technical needs, and the Commission used that report as a foundation for a legislative initiative to create a regulated framework for financial data access.</p>
+            <p>Early developments focused on addressing the fragmentation of financial data sources and the lack of harmonized formats, which historically made cross-border financial analysis within Europe complex and costly. To address these challenges, institutions such as ESMA, EBA, and EIOPA started working closely to promote data standardization. A significant milestone came with the introduction of the <strong>European Single Electronic Format (ESEF)</strong> in 2019, which mandated that all issuers on EU regulated markets prepare their annual financial reports in a structured electronic format based on Inline XBRL (iXBRL) standards starting from financial year beginning January 1, 2020.</p>
+            <p>Since then, efforts have accelerated. The EFDS vision has been progressively integrated into the EU's broader initiatives like the Capital Markets Union (CMU) and the Digital Finance Strategy. A major complementary development is the creation of the <strong>ESAP</strong>, a platform set to go live in phases starting by 10 July 2027, which will act as a centralized hub for accessing publicly available financial reporting data and sustainability-related information on EU companies.</p>
+            <p>Market reactions have been positive. <a href="https://www.capco.com/intelligence/capco-intelligence/european-single-access-point">Capco</a> highlights the impact of ESAP on financial and ESG data, stressing its potential to streamline crucial decision-making processes. <a href="https://www.matheson.com/insights/detail/european-single-access-point--regulation---an-update">Matheson</a> discusses the legal aspects and expected timelines for implementing the ESAP regulation. <a href="https://www.xbrl.org/tag/esap/">XBRL International</a> explores how the integration of structured data will enhance data accessibility. <a href="https://www.securities-services.societegenerale.com/en/insights/views/news/esap-european-single-access-point/">Societe Generale</a> outlines ESAP's role in providing EU-wide access to financial and non-financial information. <a href="https://www.herbertsmithfreehills.com/notes/esg/2024-posts/European-Single-Access-Point--what-it-means-for-sustainability-data">Herbert Smith Freehills</a> emphasizes how ESAP will help standardize and centralize ESG disclosures. <a href="https://securities.cib.bnpparibas/esap-regulation-european-single-access-point/">BNP Paribas</a> details the legislative package and its impact on reporting requirements. <a href="https://accountancyeurope.eu/publications/european-single-access-point-esap-what-do-auditors-need-to-know/">Accountancy Europe</a> highlights the importance of transparency for auditors.</p>
+            <p>The most concrete early legal achievement for the EFDS is the adoption of the ESAP Regulation. The European Parliament and the Council adopted Regulation (EU) 2023/2859, which formally tasks ESMA with creating and operating a European Single Access Point providing centralised access to publicly available information relevant to financial services, capital markets and sustainability.</p>
+            <p>As of late 2025 the two strands that make up the EFDS, ESAP and FIDA, are at different stages. ESAP has a binding legal basis in the ESAP Regulation and therefore a firm delivery timetable. The FIDA initiative, by contrast, remains in the inter-institutional legislative phase: the Commission's proposal lays out a framework for customer control over data, obligations for data holders and an authorisation regime for data users, but the final text requires agreement in the co-legislative process.</p>
+            <p>The legal timetable for ESAP is explicit in the ESAP Regulation and therefore provides the clearest short-term horizon for the EFDS: ESMA must build and put into operation the centralised portal according to the dates and the functional and security requisites set out in the Regulation. For the open finance regulation, the Commission's proposal envisages a staged implementation once the co-legislators reach agreement.</p>
+        </section>
+
+        <section id="esma-role">
+            <h2>ESMA's Role in Standardizing Electronic Reporting</h2>
+            <p>ESMA has played a central role in operationalizing the vision of a harmonized European Financial Data Space through its work on the ESEF. Originally mandated by the Transparency Directive (as amended in 2013), ESEF was developed to standardize how annual financial reports are prepared and disseminated by issuers across the EU. ESMA's work ensures that electronic reporting is not only uniform but also enhances machine-readability, enabling automated data extraction and analysis across member states.</p>
+            <p>The first ESEF mandate, implemented for financial years starting in 2020, required issuers to format their consolidated financial statements according to the IFRS taxonomy, using iXBRL technology. This marked a significant shift from static PDF reporting towards dynamic, structured digital disclosures.</p>
+            <p>Building on the initial success of ESEF, ESMA has continued to refine and expand the framework. In October 2025, ESMA published a latest updated <strong>ESEF Reporting Manual</strong>, offering clarified guidance on complex technical issues such as:</p>
+            <ul>
+                <li>The correct tagging of dashes and empty fields (Guidance 2.2.5)</li>
+                <li>The anchoring of extension elements only to base taxonomy elements sharing the same or narrower data type (Guidance 1.4.1)</li>
+                <li>Stricter requirements for transformation and duplication of facts (Guidance 2.2.3, 2.2.4)</li>
+                <li>Clearer rules for naming conventions of report packages and taxonomy files (Guidance 2.6.3, 3.1.5)</li>
+            </ul>
+            <p>In parallel, in May 2024, ESMA proposed amendments to the RTS on ESEF to align with the latest updates from the IFRS Foundation's Taxonomy and the new XBRL 2.1 and OIM (Open Information Model) standards.</p>
+            <p>Recognizing the rising importance of ESG factors, ESMA has launched a process to extend the scope of electronic reporting beyond financial statements. In December 2024, ESMA launched a major consultation on applying ESEF principles to <strong>sustainability reporting</strong>, in particular to align the digital tagging of sustainability statements prepared under the European Sustainability Reporting Standards (ESRS) within the Corporate Sustainability Reporting Directive (CSRD) framework.</p>
+            <blockquote>
+                "Building an integrated financial system is not only about the plumbing of markets, but about making that system work for citizens and companies."
+                <cite>-- Verena Ross, ESMA Chair (2025)</cite>
+            </blockquote>
+        </section>
+
+        <section id="challenges">
+            <h2>Challenges in the Implementation of the European Financial Data Space</h2>
+            <p>The EFDS faces interconnected difficulties that are technical, institutional and political.</p>
+
+            <h3 id="standardisation">1. Standardisation</h3>
+            <p>The EFDS's value depends on consistent, machine-readable, richly metadata-tagged data. Reconciling existing financial reporting formats, supervisory reporting vocabularies and sustainability disclosures into a common data dictionary is technically strenuous and requires detailed implementing rules. The European Supervisory Authorities (ESAs) have developed detailed implementing technical standards for ESAP. In October 2024, they published a final report on ITS that defines precisely how "collection bodies" should operate and how ESAP's functionalities should work.</p>
+            <p>The most fundamental difficulty lies in choosing the appropriate machine-readable formats. The ESAP Regulation obliges the ESAs to identify extractable and, where required, fully machine-readable formats for the broad range of disclosures that ESAP will collect. ESMA acknowledges in its consultation papers that no single format is suitable for all types of information and that selecting among XML, JSON, XBRL and other formats requires an examination of costs, market readiness, technical complexity and long-term sustainability.</p>
+
+            <h3 id="governance">2. Governance</h3>
+            <p>The ESAP Regulation rests on the cooperation of national collection bodies and EU agencies. The different administrative traditions, resourcing levels and data cultures across Member States create a risk of fragmentation unless implementation is closely coordinated. At the core of this difficulty is the division of responsibilities between the European Commission, the European Supervisory Authorities and the national collection bodies.</p>
+            <p>The difficulty increases when the governance of financial data intersects with that of sustainability data. ESAP is expected to host disclosures that fall under the responsibility of EFRAG, national audit authorities and, in some cases, ministries responsible for environmental or corporate governance policies. These bodies operate outside the traditional financial regulatory architecture.</p>
+
+            <h3 id="legal-political">3. Legal and Political</h3>
+            <p>FIDA raises contentious questions about scope (which financial product and which categories of personal and business-related financial data should be in scope), about the appropriate authorisation regime for data users and about compensation to data holders. Those issues require complex political trade-offs because they imply consumer protection, competition policy and financial stability concerns.</p>
+
+            <h3 id="security">4. Operational Resilience and Security</h3>
+            <p>ESAP will aggregate high-value data and FIDA would enable controlled flows of personal and business financial data. Both must be underpinned by strong cybersecurity, authentication and non-repudiation mechanisms, which impose implementation and cost burdens on authorities and firms. The EU's decentralised model, with national collection bodies feeding into a central portal, adds complexity: each node must meet high standards, yet differences in technical maturity and resources across Member States can create vulnerabilities.</p>
+
+            <h3 id="acceptance">5. Social and Market Acceptance</h3>
+            <p>Achieving meaningful consumer trust (so that individuals elect to permit data sharing) depends on transparent, usable consent mechanisms and visible safeguards in the legal and technical design. On the market side, financial institutions and Fintechs must also see tangible benefits from adopting the standardised interfaces, APIs, and compliance obligations required by ESAP and FIDA. If the costs of integration, compliance, or cybersecurity are perceived as higher than the potential gains from data sharing or innovation, firms may resist full participation.</p>
+        </section>
+
+        <section id="future">
+            <h2>Future Priorities and Recommendations</h2>
+            <p>To successfully address the current challenges and unlock the full potential of the European Financial Data Space, policymakers, regulators, and industry stakeholders must focus on several strategic priorities:</p>
+            <ol>
+                <li><strong>Enhancing interoperability and harmonization</strong> across datasets must remain a top priority. Close coordination between ESMA, EFRAG, national supervisors, and global standard-setters like the IFRS Foundation will be essential to achieve true cross-border data comparability.</li>
+                <li><strong>Supporting smaller and mid-sized companies</strong> through technical assistance, training, and cost-effective tools will be crucial to ensure a level playing field. Public-private partnerships, funding for digitalization initiatives, and simplified reporting pathways for SMEs could help prevent disproportionate burdens.</li>
+                <li><strong>Strengthening data quality controls and assurance frameworks</strong> should be accelerated. Introducing clear and harmonized guidelines for the audit and assurance of electronic and sustainability reports will enhance the trustworthiness and usability of structured data.</li>
+                <li><strong>Developing more robust cybersecurity and data governance frameworks</strong> for platforms like ESAP will be critical to protect sensitive information and maintain public trust.</li>
+                <li><strong>Embracing technological innovation</strong> -- including artificial intelligence, machine learning, and blockchain -- offers powerful opportunities to automate data validation, detect inconsistencies, and provide real-time insights into financial and ESG performance.</li>
+            </ol>
+        </section>
+
+        <section id="msca-perspectives">
+            <h2>MSCA Digital Fellows' Perspectives</h2>
+            <p>Based on the reports submitted by the Doctoral Candidates of the MSCA Digital, key themes were identified:</p>
+
+            <h3>1. Technical Fragmentation and Standardisation Gaps</h3>
+            <p>A recurring consideration is the lack of common standards, which hinders interoperability. Financial data is collected in varying formats and lacks consistent re-usable taxonomies. The implementation of a common data model or standardized exchange protocols, such as the Statistical Data and Metadata eXchange (SDMX) standard already promoted by the ECB and BIS, could create a layer of semantic abstraction. However, outdated infrastructure at many financial institutions limits their ability to integrate with modern data-sharing systems.</p>
+
+            <h3>2. Data Security</h3>
+            <p>The high sensitivity of financial data creates security risks, which in turn damages the consumer trust needed for the EFDS to succeed. These vulnerabilities pose high-stakes risks, including the exposure of personal financial data, which can lead to financial fraud, as well as the compromise of commercial trade secrets. Consequently, many customers might be hesitant to share their financial data.</p>
+
+            <h3>3. Monopoly Risks</h3>
+            <p>Even though the EFDS is to promote openness, break down data silos, and foster competition, concerns have been raised that unintended consequences should be considered. If the costs of participation are too high, this will create a high barrier to entry which could make it difficult for SMEs, Fintechs, and community banks to participate, potentially reinforcing the market dominance of large incumbent banks.</p>
+
+            <h3>4. Implementation and Scope Challenges</h3>
+            <p>The ESAP, intended for public financial and sustainability reports, is delayed, with public access not expected until July 2027 at the earliest. Furthermore, its scope will be limited; it will not initially be mandatory to include voluntary sustainability reports or comprehensive historical data. A separate challenge is that crypto-assets and DeFi are not currently part of the EFDS framework.</p>
+        </section>
+
+        <section id="country-table">
+            <h2>Country Authorities for ESEF Report Dissemination</h2>
+            <p><strong>Table 1.</strong> Responsible authority for ESEF report dissemination per country</p>
+            <table>
+                <thead>
+                    <tr><th>Country</th><th>Official Portal / Collection Point for ESEF Reports</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Austria</td><td>OeKB Filing System (OAM Issuer Info)</td></tr>
+                    <tr><td>Belgium</td><td>FSMA Filing Portal (OAM Issuer Info)</td></tr>
+                    <tr><td>Bulgaria</td><td>FSC Register of Public Companies</td></tr>
+                    <tr><td>Croatia</td><td>HANFA Official Registry</td></tr>
+                    <tr><td>Cyprus</td><td>CySEC Announcements Platform</td></tr>
+                    <tr><td>Czech Republic</td><td>CNB Register of Regulated Information</td></tr>
+                    <tr><td>Denmark</td><td>Official Gazette (Erhvervsstyrelsen)</td></tr>
+                    <tr><td>Estonia</td><td>NASDAQ Tallinn (regulated info repository)</td></tr>
+                    <tr><td>Finland</td><td>FIN-FSA Storage of Regulated Information</td></tr>
+                    <tr><td>France</td><td>Official Bulletin (BALO) + AMF</td></tr>
+                    <tr><td>Germany</td><td>Bundesanzeiger Filing Portal</td></tr>
+                    <tr><td>Greece</td><td>HCMC Registry</td></tr>
+                    <tr><td>Hungary</td><td>Official Storage Mechanism - MNB</td></tr>
+                    <tr><td>Ireland</td><td>Central Bank of Ireland</td></tr>
+                    <tr><td>Italy</td><td>eMarket Storage System (managed by Teleborsa, Spafid)</td></tr>
+                    <tr><td>Latvia</td><td>Nasdaq Riga - Regulated Info Platform</td></tr>
+                    <tr><td>Lithuania</td><td>Nasdaq Vilnius - Official Register</td></tr>
+                    <tr><td>Luxembourg</td><td>Financial Reporting Storage CSSF</td></tr>
+                    <tr><td>Malta</td><td>MFSA National Storage Mechanism</td></tr>
+                    <tr><td>Netherlands</td><td>AFM Register for Regulated Information</td></tr>
+                    <tr><td>Poland</td><td>Official Storage Platform - KNF</td></tr>
+                    <tr><td>Portugal</td><td>CMVM Storage Platform</td></tr>
+                    <tr><td>Romania</td><td>ASF Regulated Information Database</td></tr>
+                    <tr><td>Slovakia</td><td>NBS and Bratislava Stock Exchange</td></tr>
+                    <tr><td>Slovenia</td><td>AJPES Official Portal</td></tr>
+                    <tr><td>Spain</td><td>CNMV Official Filing Portal</td></tr>
+                    <tr><td>Sweden</td><td>Finansinspektionen + Nasdaq Stockholm</td></tr>
+                </tbody>
+            </table>
+            <p><em>Source: Authors' construction</em></p>
+            <p>Note: Every EU country is obliged to comply with ESEF, but the visibility and organization of national authorities' roles can vary depending on the size of the market, infrastructure readiness, and local decisions on how to implement the ESEF mandates.</p>
+        </section>
+
+        <section id="references">
+            <h2>References</h2>
+            <ul>
+                <li>European Commission (24 October 2022). <a href="https://finance.ec.europa.eu/publications/report-open-finance_en">Report on open finance</a>.</li>
+                <li>Expert group on European financial data space (E03763) (15 March 2021). <a href="https://ec.europa.eu/transparency/expert-groups-register/screen/expert-groups/consult?lang=en&groupID=3763">European Commission transparency register</a>.</li>
+                <li>European Union. (13 December 2023). <a href="https://eur-lex.europa.eu/EN/legal-content/summary/european-single-access-point.html">European single access point</a>.</li>
+                <li>European Financial Data Space. (19 February 2020). <a href="https://www.european-financial-data-space.com/">European Financial Data Space</a>.</li>
+                <li>European Union. (2020). <a href="https://eur-lex.europa.eu/eli/reg/2020/852/oj">Regulation (EU) 2020/852</a> on the establishment of a framework to facilitate sustainable investment. Official Journal of the European Union, L 198, 13-43.</li>
+                <li>ESMA. <a href="https://www.esma.europa.eu/press-news/esma-news/esas-finalise-rules-facilitate-access-financial-and-sustainability-information">The ESAs finalise rules to facilitate access to financial and sustainability information on the ESAP</a>.</li>
+                <li>Ross, V. (29 October 2024). <a href="https://www.esma.europa.eu/document/verena-ross-keynote-speech-11th-international-financial-markets-conference-7-november-2025">Keynote speech at the 11th International Financial Markets Conference</a>. ESMA.</li>
+            </ul>
+        </section>
+
+        <section id="appendix">
+            <h2>Appendix: European Single Access Point (ESAP) - Recent Developments</h2>
+            <p>Initially, ESMA was tasked with establishing ESAP by December 2024. However, due to the complexity of the project and the need for comprehensive technical and operational frameworks, the timeline has been extended. ESMA is now required to ensure the ESAP portal provides a minimum set of functionalities, such as a user-friendly web portal, by December 2025. The full operationalization of ESAP is now anticipated by July 2027 (<a href="https://www.pwc.ch/en/insights/regulation/update-on-the-esap.html">PwC</a>, <a href="https://www.european-financial-data-space.com/European_Single_Access_Point_(ESAP).html">EFDS</a>).</p>
+            <p>In October 2024, the European Supervisory Authorities (ESAs) finalized implementing technical standards (ITS) to facilitate access to financial and sustainability information on ESAP. These standards specify tasks for collection bodies, such as national authorities and EU offices, detailing how and when information should be submitted to ESAP, the validation checks required, and the metadata to be included (<a href="https://www.greenomy.io/blog/european-single-access-point">Greenomy</a>).</p>
+            <p>The ESAP platform is expected to be operational by 1 January 2026, subject to the adoption of delegated and implementing acts by the European Commission and ESMA (<a href="https://www.pwc.ch/en/insights/regulation/update-on-the-esap.html">PwC</a>).</p>
+
+            <figure class="figure">
+                <img src="assets/esap-milestones.png" alt="ESAP Milestones Timeline">
+                <figcaption>Figure 1. ESAP milestones<br><em>Source: Authors' construction</em></figcaption>
+            </figure>
+        </section>
+
+        <div class="acknowledgments">
+            <h3>Acknowledgments</h3>
+            <p>This work has been conducted under the Marie Sklodowska-Curie Actions under the European Union's Horizon Europe Research and Innovation program for the Industrial Doctoral Network on Digital Finance, acronym: DIGITAL, Project No 101119635.</p>
+        </div>
+    </main>
+
+    <script>
+        // Highlight active section in sidebar
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.sidebar nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
