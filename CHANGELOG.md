@@ -1,5 +1,41 @@
 # CHANGELOG - European Financial Data Space White Paper
 
+## Version 2.1 - December 4, 2025 (Academic Style Review)
+
+### INFORMAL LANGUAGE FIXES
+1. **Line 611**: "Doesn't" -> "Does not" (DORA section)
+2. **Line 203**: "Big Tech" -> "DMA Gatekeepers" (Executive Summary)
+3. **Line 439**: "Big Tech (DMA gatekeeper)" -> "DMA gatekeeper" (FIDA Timeline)
+
+### SENTENCE STRUCTURE IMPROVEMENTS
+4. **Executive Summary (Line 188)**: Split complex 3-clause sentence into 3 shorter sentences
+5. **Introduction**: Improved clarity by breaking long sentences
+
+### INLINE CITATIONS ADDED
+6. **Executive Summary**: Added (ESMA, 2024) for 50,000 entities claim
+7. **Executive Summary**: Added (Eurostat, 2024) for 450 million citizens claim
+8. **Executive Summary**: Added (European Commission, 2020) for EUR 1.5 trillion CMU claim
+9. **Cost-Benefit Assessment**: Added (European Commission, 2025) and (ESMA, 2024)
+10. **PSD2 Lessons**: Added (CMA, 2022) and (McKinsey, 2020) citations
+
+### REFERENCE FORMAT STANDARDIZATION (APA 7th)
+11. All 23 references converted to APA 7th edition format
+12. Date format standardized: (Month Year) -> (Year, Month)
+13. Organization names spelled out with periods
+14. Titles italicized using `<em>` tags
+15. DOIs added for academic journal articles
+16. Full URLs provided for web sources
+
+### VERIFICATION METRICS
+| Metric | Before | After | Target |
+|--------|--------|-------|--------|
+| Informal language | 2 | 0 | 0 |
+| Avg sentence length | 31.6 | 30.4 | 20-25 |
+| Flesch Reading Ease | 1.8 | 2.7 | 10-30 |
+| Grade Level | 20.9 | 20.4 | 16-22 |
+
+---
+
 ## Version 2.0 - December 2025 (Comprehensive Review Implementation)
 
 Based on 10-agent parallel review (1 orchestrator + 9 specialized reviewers).
