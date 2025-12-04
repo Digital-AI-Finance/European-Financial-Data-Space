@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFDS Executive Brief - December 2025</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.5;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            font-size: 11pt;
+        }
+        .header {
+            background: linear-gradient(135deg, #003399 0%, #001a4d 100%);
+            color: white;
+            padding: 20px;
+            margin: -30px -30px 20px -30px;
+            text-align: center;
+        }
+        .header h1 { font-size: 1.6em; margin-bottom: 5px; }
+        .header .subtitle { font-size: 0.95em; opacity: 0.9; }
+        .header .date { font-size: 0.85em; margin-top: 8px; opacity: 0.8; }
+        h2 { color: #003399; font-size: 1.1em; margin: 20px 0 10px; border-bottom: 2px solid #ffcc00; padding-bottom: 5px; }
+        h3 { color: #444; font-size: 1em; margin: 15px 0 8px; }
+        .stakes { background: #fff3cd; padding: 15px; border-radius: 5px; margin: 15px 0; }
+        .stakes strong { color: #856404; }
+        .timeline-box { background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 15px 0; }
+        .timeline-item { display: flex; margin-bottom: 8px; font-size: 0.9em; }
+        .timeline-date { min-width: 80px; font-weight: bold; color: #003399; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.85em; }
+        th, td { padding: 6px 8px; text-align: left; border: 1px solid #ddd; }
+        th { background: #003399; color: white; }
+        .priority-high { background: #dc3545; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; }
+        .priority-medium { background: #fd7e14; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; }
+        ul { margin: 8px 0 8px 20px; }
+        li { margin-bottom: 4px; }
+        .action-box { background: #d4edda; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #28a745; }
+        .action-box h3 { color: #155724; margin-top: 0; }
+        .footer { margin-top: 30px; padding-top: 15px; border-top: 1px solid #ddd; font-size: 0.85em; color: #666; text-align: center; }
+        .two-col { display: flex; gap: 20px; }
+        .two-col > div { flex: 1; }
+        @media print {
+            body { padding: 15px; font-size: 10pt; }
+            .header { margin: -15px -15px 15px -15px; padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>European Financial Data Space</h1>
+        <div class="subtitle">Executive Brief for EU Policymakers</div>
+        <div class="date">December 2025 | Version 2.0</div>
+    </div>
+
+    <div class="stakes">
+        <strong>What's at Stake:</strong> The EFDS governs financial data for <strong>27 Member States</strong>, affecting <strong>50,000+ reporting entities</strong> and <strong>450 million EU citizens</strong>. Delays risk EU fintech falling behind US/Asia and biased AI making discriminatory financial decisions.
+    </div>
+
+    <h2>Current Status</h2>
+    <div class="timeline-box">
+        <div class="timeline-item"><span class="timeline-date">ESAP</span> Portal launches July 2027; full functionality 2030</div>
+        <div class="timeline-item"><span class="timeline-date">FIDA</span> First trilogue April 2025; agreement expected Q1 2026</div>
+        <div class="timeline-item"><span class="timeline-date">CSRD</span> April 2025 postponement reduces scope by 80%</div>
+        <div class="timeline-item"><span class="timeline-date">DORA</span> Effective January 17, 2025 - ICT resilience mandatory</div>
+        <div class="timeline-item"><span class="timeline-date">MiCA</span> Fully applicable December 2024; ~65% EU compliance</div>
+    </div>
+
+    <h2>Top 5 Urgent Actions</h2>
+    <table>
+        <thead>
+            <tr><th>Action</th><th>Lead</th><th>Deadline</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Establish data quality standards for AI fitness</td><td>ESMA</td><td>Q3 2026</td><td><span class="priority-high">HIGH</span></td></tr>
+            <tr><td>Complete FIDA negotiations with balanced scope</td><td>Council/Parliament</td><td>Q1 2026</td><td><span class="priority-high">HIGH</span></td></tr>
+            <tr><td>Deploy ESAP collection bodies (27 MS)</td><td>National authorities</td><td>July 2026</td><td><span class="priority-high">HIGH</span></td></tr>
+            <tr><td>Integrate cybersecurity with DORA framework</td><td>ESAs/ENISA</td><td>Q4 2025</td><td><span class="priority-high">HIGH</span></td></tr>
+            <tr><td>Prepare crypto-asset data schemas</td><td>ESMA</td><td>Q4 2027</td><td><span class="priority-medium">MEDIUM</span></td></tr>
+        </tbody>
+    </table>
+
+    <h2>Critical Gaps Identified</h2>
+    <div class="two-col">
+        <div>
+            <h3>Data Quality</h3>
+            <ul>
+                <li>No standards for AI training data fitness</li>
+                <li>57% of executives cite ESG data quality as top challenge</li>
+                <li>Only 2/31 G-SIBs fully BCBS 239 compliant</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Implementation</h3>
+            <ul>
+                <li>69% of firms implemented <50% of PSD2</li>
+                <li>Collection body readiness varies by MS</li>
+                <li>Format selection (XML/JSON/XBRL) pending</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Key Policy Debates</h2>
+    <ul>
+        <li><strong>FIDA Scope:</strong> May 2025 amendments propose excluding Big Tech (DMA gatekeepers)</li>
+        <li><strong>Industry Concerns:</strong> December 2024 joint statement requests impact assessment before adoption</li>
+        <li><strong>SME Burden:</strong> EUR 15,000-50,000 annual compliance cost may exclude smaller players</li>
+        <li><strong>Crypto-GDPR Conflict:</strong> Blockchain immutability vs. right to erasure unresolved</li>
+    </ul>
+
+    <h2>Economic Impact</h2>
+    <div class="two-col">
+        <div>
+            <h3>Costs</h3>
+            <ul>
+                <li>FIDA (full scope): EUR 504M</li>
+                <li>FIDA (revised): EUR 134M</li>
+                <li>ESAP per MS: EUR 2-5M</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Benefits</h3>
+            <ul>
+                <li>CMU integration: EUR 1.5T potential</li>
+                <li>SME cash mgmt: EUR 15-30M/bank</li>
+                <li>Due diligence: 30-50% reduction</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="action-box">
+        <h3>Decisions Required in Next 90 Days</h3>
+        <ol>
+            <li><strong>Q1 2026:</strong> FIDA final text adoption (Council/Parliament trilogue)</li>
+            <li><strong>Q1 2026:</strong> Designate EFDS coordination leads in each Member State</li>
+            <li><strong>Q2 2026:</strong> Data format standard selection (ESAs Joint Committee)</li>
+        </ol>
+    </div>
+
+    <h2>Success Metrics</h2>
+    <ul>
+        <li><strong>Access:</strong> ESAP unique users, API calls, data downloads</li>
+        <li><strong>Quality:</strong> Error rates <5%, completeness >90%</li>
+        <li><strong>Compliance:</strong> 27/27 collection bodies operational by July 2026</li>
+        <li><strong>Innovation:</strong> 500+ new fintech providers using EFDS data by 2030</li>
+    </ul>
+
+    <div class="footer">
+        <strong>Full White Paper:</strong> <a href="index.html">European Financial Data Space - Policy White Paper v2.0</a><br>
+        MSCA Digital Network | Project No 101119635 | <a href="CHANGELOG.md">View 75+ improvements in v2.0</a>
+    </div>
+</body>
+</html>

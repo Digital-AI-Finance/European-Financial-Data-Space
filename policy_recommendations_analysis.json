@@ -1,0 +1,187 @@
+{
+  "analysis_date": "2025-12-04 00:42",
+  "total_recommendations": 7,
+  "summary": {
+    "high_priority": 3,
+    "medium_priority": 3,
+    "ongoing": 1
+  },
+  "detailed_analysis": [
+    {
+      "recommendation": "Establish Data Quality Standards",
+      "priority": "High Priority",
+      "scores": {
+        "actionability": 7,
+        "ownership": 2,
+        "kpi": 4,
+        "implementation_detail": 1,
+        "priority_level": 10
+      },
+      "strengths": [
+        "Contains numbered implementation steps",
+        "Mentions stakeholders: policymakers"
+      ],
+      "weaknesses": [
+        "Missing specific deadline",
+        "Lacks clear KPIs or success metrics",
+        "Limited implementation guidance"
+      ],
+      "suggestions": [
+        "Add quantifiable success criteria (e.g., '% of Member States compliant', 'reduction in reporting errors by X%')",
+        "Expand on 'how' the recommendation will be executed (tools, resources, procedures)"
+      ]
+    },
+    {
+      "recommendation": "Complete FIDA Negotiations with Balanced Scope",
+      "priority": "High Priority",
+      "scores": {
+        "actionability": 10,
+        "ownership": 2,
+        "kpi": 4,
+        "implementation_detail": 2,
+        "priority_level": 10
+      },
+      "strengths": [
+        "Contains numbered implementation steps",
+        "Includes specific timeline",
+        "Mentions stakeholders: data holders"
+      ],
+      "weaknesses": [
+        "Lacks clear KPIs or success metrics",
+        "Limited implementation guidance"
+      ],
+      "suggestions": [
+        "Add quantifiable success criteria (e.g., '% of Member States compliant', 'reduction in reporting errors by X%')",
+        "Expand on 'how' the recommendation will be executed (tools, resources, procedures)"
+      ]
+    },
+    {
+      "recommendation": "Accelerate ESAP Collection Body Onboarding",
+      "priority": "High Priority",
+      "scores": {
+        "actionability": 6,
+        "ownership": 4,
+        "kpi": 4,
+        "implementation_detail": 0,
+        "priority_level": 10
+      },
+      "strengths": [
+        "Includes specific timeline",
+        "Mentions stakeholders: Member States, collection bodies"
+      ],
+      "weaknesses": [
+        "Lacks numbered implementation steps",
+        "Lacks clear KPIs or success metrics",
+        "Limited implementation guidance"
+      ],
+      "suggestions": [
+        "Add quantifiable success criteria (e.g., '% of Member States compliant', 'reduction in reporting errors by X%')",
+        "Expand on 'how' the recommendation will be executed (tools, resources, procedures)"
+      ]
+    },
+    {
+      "recommendation": "Integrate AI Governance Framework",
+      "priority": "Medium Priority",
+      "scores": {
+        "actionability": 7,
+        "ownership": 0,
+        "kpi": 6,
+        "implementation_detail": 2,
+        "priority_level": 6
+      },
+      "strengths": [
+        "Contains numbered implementation steps",
+        "Contains measurable elements"
+      ],
+      "weaknesses": [
+        "Missing specific deadline",
+        "No specific responsible parties identified",
+        "Limited implementation guidance"
+      ],
+      "suggestions": [
+        "Explicitly assign lead authority (e.g., 'ESMA in coordination with...')",
+        "Expand on 'how' the recommendation will be executed (tools, resources, procedures)"
+      ]
+    },
+    {
+      "recommendation": "Develop Crypto-Asset Data Framework",
+      "priority": "Medium Priority",
+      "scores": {
+        "actionability": 7,
+        "ownership": 0,
+        "kpi": 0,
+        "implementation_detail": 0,
+        "priority_level": 6
+      },
+      "strengths": [
+        "Contains numbered implementation steps"
+      ],
+      "weaknesses": [
+        "Missing specific deadline",
+        "No specific responsible parties identified",
+        "Lacks clear KPIs or success metrics",
+        "Limited implementation guidance"
+      ],
+      "suggestions": [
+        "Explicitly assign lead authority (e.g., 'ESMA in coordination with...')",
+        "Add quantifiable success criteria (e.g., '% of Member States compliant', 'reduction in reporting errors by X%')",
+        "Expand on 'how' the recommendation will be executed (tools, resources, procedures)"
+      ]
+    },
+    {
+      "recommendation": "Create SME Support Mechanisms",
+      "priority": "Medium Priority",
+      "scores": {
+        "actionability": 7,
+        "ownership": 0,
+        "kpi": 2,
+        "implementation_detail": 3,
+        "priority_level": 6
+      },
+      "strengths": [
+        "Contains numbered implementation steps"
+      ],
+      "weaknesses": [
+        "Missing specific deadline",
+        "No specific responsible parties identified",
+        "Lacks clear KPIs or success metrics",
+        "Limited implementation guidance"
+      ],
+      "suggestions": [
+        "Explicitly assign lead authority (e.g., 'ESMA in coordination with...')",
+        "Add quantifiable success criteria (e.g., '% of Member States compliant', 'reduction in reporting errors by X%')",
+        "Expand on 'how' the recommendation will be executed (tools, resources, procedures)"
+      ]
+    },
+    {
+      "recommendation": "Standardize Machine-Readable Formats",
+      "priority": "Ongoing",
+      "scores": {
+        "actionability": 3,
+        "ownership": 0,
+        "kpi": 0,
+        "implementation_detail": 0,
+        "priority_level": 3
+      },
+      "strengths": [],
+      "weaknesses": [
+        "Lacks numbered implementation steps",
+        "Missing specific deadline",
+        "No specific responsible parties identified",
+        "Lacks clear KPIs or success metrics",
+        "Limited implementation guidance"
+      ],
+      "suggestions": [
+        "Explicitly assign lead authority (e.g., 'ESMA in coordination with...')",
+        "Add quantifiable success criteria (e.g., '% of Member States compliant', 'reduction in reporting errors by X%')",
+        "Expand on 'how' the recommendation will be executed (tools, resources, procedures)"
+      ]
+    }
+  ],
+  "average_scores": {
+    "actionability": 6.714285714285714,
+    "ownership": 1.1428571428571428,
+    "kpi": 2.857142857142857,
+    "implementation_detail": 1.1428571428571428
+  }
+}
